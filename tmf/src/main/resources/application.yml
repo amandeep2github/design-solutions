@@ -1,0 +1,13 @@
+logger:
+  pattern.console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %msg%n"
+
+spring:
+  profiles: default
+  datasource:
+    url: jdbc:h2:file:.\db\dev
+    driverClassName: org.h2.Driver
+
+tmf:
+  taskTableCreateQuery: create table task (id number, task varchar2)
+
+---
