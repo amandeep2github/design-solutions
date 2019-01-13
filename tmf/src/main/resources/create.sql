@@ -1,0 +1,1 @@
+create table task (id number primary key);

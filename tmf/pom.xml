@@ -9,7 +9,7 @@
      <version>1.0-SNAPSHOT</version>
    </parent>
   <artifactId>tmf</artifactId>
-
+  <packaging>jar</packaging>
   <name>tmf</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -22,36 +22,22 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-      <version>1.5.9.RELEASE</version>
+      <groupId>learn.design</groupId>
+      <artifactId>model</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-jdbc</artifactId>
-      <version>1.5.9.RELEASE</version>
+      <groupId>learn.design</groupId>
+      <artifactId>db-server</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-logging</artifactId>
-      <version>1.5.9.RELEASE</version>
-    </dependency>
-      <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-api</artifactId>
-        <version>1.7.25</version>
-      </dependency>
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <version>1.4.197</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
+    <!--<dependency>
+      <groupId>learn.design</groupId>
+      <artifactId>ignite-server</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>-->
+
+
   </dependencies>
 
   <build>
@@ -96,6 +82,11 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+          <plugin>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-maven-plugin</artifactId>
+              <version>${spring.version}</version>
+          </plugin>
       </plugins>
     </pluginManagement>
   </build>

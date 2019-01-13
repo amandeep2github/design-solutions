@@ -1,11 +1,9 @@
-package learn.design.tmf;
+package learn.design.dbserver;
 
-import learn.design.tmf.database.DatabaseConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,13 +16,14 @@ public class BootStrap {
 
     @Bean
     public JdbcTemplate getJdbcTemplate(@Autowired DataSource dataSource){
+        logger.info("Started datasource {}", dataSource);
         return new JdbcTemplate(dataSource);
     }
 
     @Bean
-    public InitializingBean bootstrap(@Autowired DatabaseConfig dbConfig){
+    public InitializingBean bootstrap(@Autowired final DataSource dataSource){
         return ()->{
-            logger.info("In Bootstrap {}", dbConfig.getTaskTableCreateQuery());
+            logger.info("In Bootstrap with DataSource {}", dataSource);
         };
     }
 }

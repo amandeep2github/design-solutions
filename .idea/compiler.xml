@@ -6,6 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common" />
+        <module name="dbserver" />
+        <module name="ignite-server" />
+        <module name="model" />
         <module name="tmf" />
       </profile>
     </annotationProcessing>
